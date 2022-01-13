@@ -162,3 +162,54 @@ numberButton4.addEventListener('click', function(){
         listShotsElement.innerText = shotsindexElement;
     }
 });
+
+// ! Esercizio 5
+/*Crea due array che hanno un numero di elementi diversi.
+Aggiungi elementi casuali all’array che ha meno elementi,
+fino a quando ne avrà tanti quanti l’altro.
+Javascript - JS
+JSnack 5*/
+
+// Dichiaro due array
+const firstArray = [];
+const secondArray = [];
+// Randomizzo la dimensione degli array
+const m = Math.floor(Math.random()*8 + 2);
+const n = Math.floor(Math.random()*8 + 2);
+// Randomizzo un numero casuale
+let randomNumber = Math.floor(Math.random()*500 + 1);
+// Costruisco un ciclo for che inserisce elementi nell'array
+for(let o = 0; o < m; o++){
+    let randomNumber = Math.floor(Math.random()*500 + 1);
+    firstArray.push(randomNumber);
+}
+
+for(let o = 0; o < n; o++){
+    let randomNumber2 = Math.floor(Math.random()*500 + 1);
+    secondArray.push(randomNumber2);
+}
+// Recuper elemento in pagina
+const startArray =document.getElementById('start-array');
+startArray.innerHTML = `<span> I due Array iniziali sono: </span> <br />
+<ul>
+    <li>${firstArray}</li>
+    <li>${secondArray}</li>
+</ul>`;
+  
+while(m !== n){
+      let randomNumber3 = Math.floor(Math.random() * 3) + 1;
+      if(firstArray.length > secondArray.length) {
+          secondArray.push(randomNumber3);
+          m++
+      }else{ 
+          firstArray.push(randomNumber3);
+          n++
+      }
+    }
+
+ const ad = document.getElementById('final-array');
+ ad.innerHTML = `<span> I due Array Finali sono: </span> <br />
+<ul>
+    <li>${firstArray}</li>
+    <li>${secondArray}</li>
+</ul>`;
