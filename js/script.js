@@ -89,3 +89,76 @@ numberButton2.addEventListener('click', function(){
         labelNumber2.classList.add('d-none');
     }
 });
+
+// ! Esercizio 3
+/*Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una
+lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati. */
+// Recupero elemento in pagina
+const fakeListField = document.getElementById('fake-list'); 
+//Creo Delle Liste 
+const lastName = ['Einsten', 'Tesla', 'Newton'];
+const firstName = ['Albert', 'Nikola', 'Isaac']; 
+const fakeList = [];
+// Impongo il ciclo while
+while (fakeList.length < 3){
+    // Randomizzo gli index delle liste
+    const k = Math.floor(Math.random() * lastName.length);
+    const z = Math.floor(Math.random() * firstName. length);
+    // Ricavo nome e cognome
+    const surname = lastName[k]; 
+    const name = firstName[z];
+    // Monto l'elemento completo che andrà in array
+    const fakeListElement = `${surname} ${name} !`;
+    // Validazione
+    if(!fakeList.includes(fakeListElement)) {
+        fakeList.push(fakeListElement)
+    }
+}
+
+// Stampo in pagina
+fakeListField.innerHTML = `<strong>${fakeList}</strong>`;
+
+// ! Esercizio 4
+/*Crea un array di numeri interi
+e fai la somma di tutti gli elementi che sono in posizione dispari
+Javascript - JS
+JSnack 4*/
+ 
+// Dichiaro l'array 
+const generalNumber = [];
+
+// Recupero Elementi in pagina
+const labelNumber4 = document.getElementById('label-number-4');
+const numberField4 = document.getElementById('number-4');
+const numberButton4 =document.getElementById('number-button-4');
+const listShotsElement =document.getElementById('list-shots-element');
+
+// Dichiaro index
+let c = 0;
+numberButton4.addEventListener('click', function(){
+    // Recupero valore e inseriscilo nell'array
+    numberValue4 = numberField4.value;
+    generalNumber.push(numberValue4);
+    if(generalNumber.length === 5){
+        console.table(generalNumber);
+        // Tolgo l'input
+        numberField4.classList.add('d-none');
+        numberButton4.classList.add('d-none');
+        labelNumber4.classList.add('d-none');
+        // Dichiaro variabile di concatenazione
+        let shotsindexElement = '';
+        // Scorro nell'array tramite while
+        while (c < 5) {
+            let generalElement = generalNumber [c];
+            // Verifico se l'index è dispari
+            if (c % 2){
+                shotsindexElement += generalElement + ' ';
+            }
+            console.log(shotsindexElement);
+            // Condizione di uscita
+            c++
+        }
+        // Stampo in pagina
+        listShotsElement.innerText = shotsindexElement;
+    }
+});
