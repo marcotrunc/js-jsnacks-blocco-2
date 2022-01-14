@@ -28,9 +28,9 @@ numberButton.addEventListener('click', function(){
     if(sumArray.length === 5){
         // Imposto il ciclo while per sommare
         while(i < 5){
-            const array = sumArray[i];
+            const arrayEl = sumArray[i];
             // Faccio la somma
-            sum += array
+            sum += arrayEl
             // Condizione di uscita
             i++
         }
@@ -137,7 +137,7 @@ const listShotsElement =document.getElementById('list-shots-element');
 let c = 0;
 numberButton4.addEventListener('click', function(){
     // Recupero valore e inseriscilo nell'array
-    numberValue4 = numberField4.value;
+    numberValue4 = parseInt(numberField4.value);
     generalNumber.push(numberValue4);
     if(generalNumber.length === 5){
         console.table(generalNumber);
@@ -146,13 +146,13 @@ numberButton4.addEventListener('click', function(){
         numberButton4.classList.add('d-none');
         labelNumber4.classList.add('d-none');
         // Dichiaro variabile di concatenazione
-        let shotsindexElement = '';
+        let shotsindexElement = 0;
         // Scorro nell'array tramite while
         while (c < 5) {
             let generalElement = generalNumber [c];
             // Verifico se l'index è dispari
             if (c % 2){
-                shotsindexElement += generalElement + ' ';
+                shotsindexElement += generalElement;
             }
             console.log(shotsindexElement);
             // Condizione di uscita
@@ -196,19 +196,17 @@ startArray.innerHTML = `<span> I due Array iniziali sono: </span> <br />
     <li>${secondArray}</li>
 </ul>`;
   
-while(m !== n){
-      let randomNumber3 = Math.floor(Math.random() * 3) + 1;
-      if(firstArray.length > secondArray.length) {
-          secondArray.push(randomNumber3);
-          m++
-      }else{ 
-          firstArray.push(randomNumber3);
-          n++
-      }
-    }
+// while(m !== n){
+//       let randomNumber3 = Math.floor(Math.random() * 3) + 1;
+//       if(firstArray.length > secondArray.length) {
+//           secondArray.push(randomNumber3);   
+//       }else{ 
+//           firstArray.push(randomNumber3);
+//       }   
+//     }
 
- const ad = document.getElementById('final-array');
- ad.innerHTML = `<span> I due Array Finali sono: </span> <br />
+ const finalArray = document.getElementById('final-array');
+ finalArray.innerHTML = `<span> I due Array Finali sono: </span> <br />
 <ul>
     <li>${firstArray}</li>
     <li>${secondArray}</li>
