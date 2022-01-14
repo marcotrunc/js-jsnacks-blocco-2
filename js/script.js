@@ -188,8 +188,8 @@ for(let o = 0; o < n; o++){
     let randomNumber2 = Math.floor(Math.random()*500 + 1);
     secondArray.push(randomNumber2);
 }
-// Recuper elemento in pagina
-const startArray =document.getElementById('start-array');
+// Recupero elemento in pagina
+const startArray = document.getElementById('start-array');
 startArray.innerHTML = `<span> I due Array iniziali sono: </span> <br />
 <ul>
     <li>${firstArray}</li>
@@ -197,13 +197,13 @@ startArray.innerHTML = `<span> I due Array iniziali sono: </span> <br />
 </ul>`;
   
 // while(m !== n){
-//       let randomNumber3 = Math.floor(Math.random() * 3) + 1;
-//       if(firstArray.length > secondArray.length) {
-//           secondArray.push(randomNumber3);   
-//       }else{ 
-//           firstArray.push(randomNumber3);
-//       }   
-//     }
+//     let randomNumber3 = Math.floor(Math.random() * 3) + 1;
+//     if(firstArray.length > secondArray.length) {
+//             secondArray.push(randomNumber3);   
+//         }else{ 
+//             firstArray.push(randomNumber3);
+//         }   
+//       }
 
  const finalArray = document.getElementById('final-array');
  finalArray.innerHTML = `<span> I due Array Finali sono: </span> <br />
